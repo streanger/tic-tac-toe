@@ -29,14 +29,12 @@ class GuiClass(Frame):
     def __init__(self, master):
         super().__init__(master)
         
-        
     def run_gui(self):
         """create widgets"""
         self.to_reset = False
         self.chars_cycle = cycle(['X', 'O'])
         self.font = font.Font(family="Lucida console", size=32, weight="normal")
         self.original_color = self.master.cget("background")
-        
         
         # *********** init gui ***********
         # self.hide_console()
@@ -45,7 +43,6 @@ class GuiClass(Frame):
         self.master.resizable(width=False, height=False)
         self.master.wm_title("tic-tac-toe")
         self.pack()
-        
         
         # *********** widgets ***********
         self.buttons_ids = {}
@@ -59,14 +56,12 @@ class GuiClass(Frame):
                 button.pack(expand=YES, fill=BOTH, side=LEFT)
                 self.buttons_ids[counter] = button
                 
-                
         # *********** lift, get focus ***********
         self.master.update()
         self.master.attributes("-topmost", False)
         self.master.lift()  # move window to the top
         self.master.focus_force()
         return None
-        
         
     def reset_board(self):
         """reset board for next play"""
@@ -76,7 +71,6 @@ class GuiClass(Frame):
         self.chars_cycle = cycle(['X', 'O'])
         self.to_reset = False
         return None
-        
         
     def check_winner(self):
         """check who wins"""
@@ -100,7 +94,6 @@ class GuiClass(Frame):
                     self.buttons_ids[square_id].config(bg='green')
                 return True
         return False
-        
         
     def click_button(self, number):
         '''click button'''
@@ -136,7 +129,6 @@ class GuiClass(Frame):
             self.to_reset = True
             
         return None
-        
         
     @staticmethod
     def hide_console():
