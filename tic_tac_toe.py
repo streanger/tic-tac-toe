@@ -96,7 +96,7 @@ class GuiClass(Frame):
         return False
         
     def click_button(self, number):
-        '''click button'''
+        """click button"""
         # ******** check if table is full ********
         table_items = []
         for x in range(1, 10):
